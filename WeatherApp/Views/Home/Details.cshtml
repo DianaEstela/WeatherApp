@@ -1,0 +1,38 @@
+﻿@model WeatherApp.Models.CityWeather
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> City Details</title>
+    <meta charset="utf-8" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    </head>
+    <body>
+    <H1>Weather</H1>
+    
+        <div class="box text-center w-25">
+            <table class="table w-50 flex-borderless ">
+                <tbody>
+                    <tr class="  ">
+
+                        <td class="flex-borderless">
+                            @Model.CityName
+                        @Model.DateAndTime.ToShortTimeString()
+                            <a href="/Home">Back</a>
+                        </td>
+
+                        <td class="flex-borderless">
+                        @Model.TemperatureFahrenheit °F
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    
+
+
+
+    </body>
+</html>
