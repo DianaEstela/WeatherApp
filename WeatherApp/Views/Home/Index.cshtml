@@ -1,45 +1,40 @@
 ﻿@model IEnumerable<CityWeather>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        Weather App
-    </title>
-    <meta charset="utf-8" />
-    <link href="~/StyleSheet.css" rel="stylesheet" />
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<
 
-</head>
-<body>
+<H1>Weather</H1>
+@foreach (CityWeather cityWeather in Model)
+{
+    <div class="box float-left w-25">
+        <table class="table w-50">
+            <tbody>
 
-    <H1>Weather</H1>
-    @foreach (CityWeather cityWeather in Model)
-    { <div class="box float-left w-25">
-        <table class="table w-50"  >
-            <tbody >
-                <tr class="green-back ">
-                   
+
+              
+                <tr class="green-back">
+
                     <td class="green-back">
                         @cityWeather.CityName
                         @cityWeather.DateAndTime.ToShortTimeString()
-                            <a href="/weather/@cityWeather.CityUniqueCode ">Details</a>
+                        <a href="/weather/@cityWeather.CityUniqueCode ">Details</a>
                     </td>
-                   
-                        <td class="green-back">
+
+                    <td class="green-back">
                         @cityWeather.TemperatureFahrenheit °F
                     </td>
                 </tr>
                 <tr>
-                    
                 </tr>
             </tbody>
         </table>
-        </div>
-      
-    }
+    </div>
+
+}
 
 
 
-</body>
-</html>
 
-          
+
+
